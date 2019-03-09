@@ -1,6 +1,6 @@
 {
-  "name": "lyrae",
-  "version": "0.0.3",
+  "name": "@lyrae/lyrae",
+  "version": "0.0.2",
   "description": "a node version lyrae",
   "keywords": [
     "node"

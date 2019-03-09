@@ -5,11 +5,11 @@ A node version lyrae.
 ## Usage
 
 ```bash
-npx lyrae find [sn]
+npx @lyrae/lyrae find [sn]
 ```
 
 or
 
 ```bash
-npx lyrae f [sn]
+npx @lyrae/lyrae f [sn]
 ```
