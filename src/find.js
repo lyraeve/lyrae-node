@@ -79,9 +79,10 @@ const find = async sn => {
   const res = await req(sn);
   const $ = cheerio.load(res);
   if (
-    $('body h1')
-      .text()
-      .trim() === 'Not Found'
+    $.text()
+      .trim()
+      .toLowerCase()
+      .indexOf('not found') >= 0
   ) {
     return null;
   }

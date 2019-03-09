@@ -12,9 +12,14 @@ program
   .command('find [sn]')
   .description('get JSON')
   .alias('f')
-  .action(async sn =>
-    sn ? console.log(inspect(await find(sn))) : program.help()
-  );
+  .action(async sn => {
+    if (!sn) {
+      program.help();
+      return;
+    }
+    const res = await find(sn);
+    console.log(res ? inspect(res) : 'Not Found!');
+  });
 program
   .command('req [sn]')
   .description('get HTML')
