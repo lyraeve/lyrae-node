@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+require('dotenv').config();
+const { inspect } = require('util');
+var program = require('commander');
+const { version } = require('../package.json');
+const req = require('../src/req');
+const find = require('../src/find');
+const url = require('../src/url');
+
+program.version(version);
+program
+  .command('find [sn]')
+  .description('get JSON')
+  .alias('f')
+  .action(async sn =>
+    sn ? console.log(inspect(await find(sn))) : program.help()
+  );
+program
+  .command('req [sn]')
+  .description('get HTML')
+  .alias('r')
+  .action(async sn => (sn ? console.log(await req(sn)) : program.help()));
+program
+  .command('url [sn]')
+  .description('get URL')
+  .alias('u')
+  .action(sn => (sn ? console.log(url(sn)) : program.help()));
+program.parse(process.argv);
+if (!program.args.length) program.help();
