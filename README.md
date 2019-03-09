@@ -5,11 +5,11 @@ A node version lyrae.
 ## Usage
 
 ```bash
-yarn cli find [sn]
+npx lyrae find [sn]
 ```
 
 or
 
 ```bash
-yarn cli f [sn]
+npx lyrae f [sn]
 ```
