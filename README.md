@@ -13,3 +13,9 @@ or
 ```bash
 npx @lyrae/lyrae f [sn]
 ```
+
+With Docker
+
+```bash
+docker run -it --rm lyrae/lyrae-node lyrae find [sn]
+```
